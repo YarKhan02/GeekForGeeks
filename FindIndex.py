@@ -1,9 +1,15 @@
 def findIndex(n, k):
-    index = 0
+    s = 0
+    l = []
 
-    if len(n) > 1:
-        return -1
+    if k not in n:
+        return -1, -1
 
-    while index < len(n):
-        if n[index] == k:
-            print(index, end = ' ')
+    while s < len(n):
+        if n[s] == k:
+            l.append(s)
+        s += 1
+
+    return min(l), max(l)
+
+print(findIndex([1, 2, 3, 4, 5, 5], 5))
